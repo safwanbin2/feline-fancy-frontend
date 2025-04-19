@@ -54,7 +54,7 @@ const BreedDetails: React.FC = () => {
           Back to breeds
         </Link>
         
-        <div className="bg-white rounded-xl shadow-md p-8 mb-12 animate-fade-in">
+        <div className="bg-neon-green/10 text-neon-green border border-neon-green/20 rounded-xl shadow-md p-8 mb-12 animate-fade-in">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-1">
               {breed.image && (
@@ -69,7 +69,7 @@ const BreedDetails: React.FC = () => {
             <div className="lg:col-span-2">
               <h1 className="text-3xl font-bold text-cat-dark mb-4">{breed.name}</h1>
               
-              <p className="text-gray-700 mb-6">{breed.description}</p>
+              <p className="text-gray-400 mb-6">{breed.description}</p>
               
               <div className="flex flex-wrap gap-2 mb-6">
                 {breed.temperament.split(', ').map((trait) => (
@@ -82,7 +82,7 @@ const BreedDetails: React.FC = () => {
                   <Globe className="text-cat-feline mt-0.5" />
                   <div>
                     <h3 className="font-medium">Origin</h3>
-                    <p className="text-gray-600">{breed.origin}</p>
+                    <p className="text-gray-500">{breed.origin}</p>
                   </div>
                 </div>
                 
@@ -90,7 +90,7 @@ const BreedDetails: React.FC = () => {
                   <Weight className="text-cat-feline mt-0.5" />
                   <div>
                     <h3 className="font-medium">Weight</h3>
-                    <p className="text-gray-600">{breed.weight.metric} kg</p>
+                    <p className="text-gray-500">{breed.weight.metric} kg</p>
                   </div>
                 </div>
                 
@@ -98,7 +98,7 @@ const BreedDetails: React.FC = () => {
                   <Calendar className="text-cat-feline mt-0.5" />
                   <div>
                     <h3 className="font-medium">Life Span</h3>
-                    <p className="text-gray-600">{breed.life_span} years</p>
+                    <p className="text-gray-500">{breed.life_span} years</p>
                   </div>
                 </div>
                 
@@ -106,7 +106,7 @@ const BreedDetails: React.FC = () => {
                   <AlertCircle className="text-cat-feline mt-0.5" />
                   <div>
                     <h3 className="font-medium">Health Issues</h3>
-                    <p className="text-gray-600">
+                    <p className="text-gray-500">
                       {breed.health_issues && breed.health_issues <= 2 ? 'Low' : 
                        breed.health_issues && breed.health_issues <= 4 ? 'Moderate' : 'High'}
                     </p>
@@ -138,7 +138,7 @@ const BreedDetails: React.FC = () => {
         <div>
           <h2 className="text-2xl font-semibold mb-6">{breed.name} Cats</h2>
           
-          <div className="image-grid animate-fade-in">
+          <div className="image-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 animate-fade-in">
             {cats?.map((cat, index) => (
               <CatCard key={cat.id} cat={cat} index={index} />
             ))}

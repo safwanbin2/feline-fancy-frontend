@@ -22,7 +22,7 @@ const BreedFilter: React.FC<BreedFilterProps> = ({
         {selectedBreed ? (
           <button
             onClick={() => onSelectBreed(null)}
-            className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-cat-feline text-white"
+            className="flex items-center gap-1 px-3 py-1.5 bg-neon-green/10 text-neon-green rounded-full border border-neon-green/20"
           >
             {breeds.find(breed => breed.id === selectedBreed)?.name}
             <X size={16} />
@@ -32,7 +32,7 @@ const BreedFilter: React.FC<BreedFilterProps> = ({
             <button
               key={breed.id}
               onClick={() => onSelectBreed(breed.id)}
-              className="px-3 py-1.5 rounded-full bg-gray-100 hover:bg-cat-light hover:text-cat-secondary transition-colors"
+              className="px-3 py-1.5 text-xs bg-neon-green/10 text-neon-green rounded-full border border-neon-green/20"
             >
               {breed.name}
             </button>
@@ -41,7 +41,7 @@ const BreedFilter: React.FC<BreedFilterProps> = ({
         
         {!selectedBreed && breeds.length > 10 && (
           <select
-            className="px-3 py-1.5 rounded-full bg-gray-100 focus:outline-none"
+            className="px-3 py-1.5 bg-neon-green/10 text-neon-green rounded-full border border-neon-green/20"
             onChange={(e) => onSelectBreed(e.target.value)}
             value=""
           >

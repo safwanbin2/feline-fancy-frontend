@@ -20,7 +20,7 @@ const NotFound: React.FC = () => {
           </div>
           
           <h1 className="text-4xl font-bold text-cat-dark mb-4">Page Not Found</h1>
-          <p className="text-gray-600 mb-8">
+          <p className="text-gray-500 mb-8">
             Looks like this cat wandered off. The page you're looking for doesn't exist or has been moved.
           </p>
           

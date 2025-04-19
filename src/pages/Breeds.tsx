@@ -82,7 +82,7 @@ const Breeds: React.FC = () => {
             <h2 className="text-2xl font-semibold mb-6 text-foreground animate-fade-in">
               {breeds?.find(breed => breed.id === selectedBreed)?.name} Cats
             </h2>
-            <div className="image-grid">
+            <div className="image-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {catsByBreed?.map((cat, index) => (
                 <CatCard key={cat.id} cat={cat} index={index} />
               ))}
