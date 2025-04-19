@@ -18,7 +18,7 @@ const CatCard: React.FC<CatCardProps> = ({ cat, index = 0 }) => {
       style={{ animationDelay }}
     >
       <Link to={`/cat/${cat.id}`} className="block relative group">
-        <div className="overflow-hidden">
+        <div className="overflow-hidden rounded-lg">
           <img
             src={cat.url}
             alt={cat.breeds && cat.breeds.length > 0 ? cat.breeds[0].name : 'Cat image'}
@@ -28,14 +28,14 @@ const CatCard: React.FC<CatCardProps> = ({ cat, index = 0 }) => {
         </div>
         
         <button
-          className="absolute top-3 right-3 bg-white/90 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          className="absolute top-3 right-3 bg-background/80 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-cat-neon/20 hover:text-cat-neon transform group-hover:translate-y-0 translate-y-2"
           aria-label="Like"
         >
-          <Heart size={18} className="text-cat-feline" />
+          <Heart size={18} className="text-cat-neon" />
         </button>
         
         {cat.breeds && cat.breeds.length > 0 && (
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 transform translate-y-0 transition-transform duration-300 group-hover:translate-y-0">
             <h3 className="text-white font-medium">{cat.breeds[0].name}</h3>
             <p className="text-white/80 text-sm truncate">{cat.breeds[0].origin}</p>
           </div>

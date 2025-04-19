@@ -14,34 +14,36 @@ const BreedCard: React.FC<BreedCardProps> = ({ breed, index = 0 }) => {
   return (
     <Link 
       to={`/breeds/${breed.id}`} 
-      className="animate-fade-in flex flex-col group bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-lg"
+      className="animate-fade-in flex flex-col group bg-card rounded-lg border border-border overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_5px_15px_rgba(198,123,255,0.3)] hover:neon-border"
       style={{ animationDelay }}
     >
       {breed.image && (
-        <img 
-          src={breed.image.url} 
-          alt={breed.name} 
-          className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
-          loading="lazy"
-        />
+        <div className="overflow-hidden">
+          <img 
+            src={breed.image.url} 
+            alt={breed.name} 
+            className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+        </div>
       )}
       
       <div className="p-4">
-        <h3 className="font-medium text-lg text-cat-dark">{breed.name}</h3>
-        <p className="text-gray-500 text-sm mt-1">{breed.origin}</p>
-        <p className="text-gray-600 text-sm mt-2 line-clamp-2">{breed.description}</p>
+        <h3 className="font-medium text-lg text-foreground">{breed.name}</h3>
+        <p className="text-muted-foreground text-sm mt-1">{breed.origin}</p>
+        <p className="text-foreground/80 text-sm mt-2 line-clamp-2">{breed.description}</p>
         
         <div className="mt-4 flex flex-wrap gap-2">
           {breed.temperament.split(', ').slice(0, 3).map((trait) => (
             <span 
               key={trait} 
-              className="text-xs bg-cat-light text-cat-secondary rounded-full px-2 py-1"
+              className="text-xs bg-accent/20 text-cat-neon rounded-full px-2 py-1 border border-cat-neon/20"
             >
               {trait}
             </span>
           ))}
           {breed.temperament.split(', ').length > 3 && (
-            <span className="text-xs bg-gray-100 text-gray-500 rounded-full px-2 py-1">
+            <span className="text-xs bg-muted text-muted-foreground rounded-full px-2 py-1">
               +{breed.temperament.split(', ').length - 3}
             </span>
           )}

@@ -61,7 +61,7 @@
   }
 
   .image-card {
-    @apply overflow-hidden rounded-lg bg-card shadow-md transition-all hover:shadow-lg hover:-translate-y-1;
+    @apply overflow-hidden rounded-lg bg-card shadow-md transition-all hover:shadow-lg hover:-translate-y-1 border border-border/50;
   }
 
   .image-card img {
@@ -82,5 +82,38 @@
   
   .neon-text {
     @apply text-cat-neon drop-shadow-[0_0_8px_rgba(198,123,255,0.8)];
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(198, 123, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(198, 123, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(198, 123, 255, 0.3);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite;
+  }
+  
+  .animate-slide-in {
+    animation: slide-in 0.4s ease-out forwards;
   }
 }
