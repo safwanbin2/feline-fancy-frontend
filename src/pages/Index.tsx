@@ -41,7 +41,7 @@ const Index: React.FC = () => {
       <div className="container mx-auto px-4 py-8 flex-grow">
         <h2 className="text-2xl font-semibold mb-6">Featured Cats</h2>
         
-        <div className="image-grid">
+        <div className="image-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">  
           {cats?.map((cat, index) => (
             <CatCard key={cat.id} cat={cat} index={index} />
           ))}
@@ -50,11 +50,13 @@ const Index: React.FC = () => {
         <div className="mt-12 text-center">
           <button
             onClick={handleLoadMore}
-            className="px-6 py-3 bg-white border border-cat-feline text-cat-feline rounded-lg hover:bg-cat-light transition-all flex items-center gap-2 mx-auto"
+            className="neo-button flex items-center gap-2 animate-slide-in font-orbitron group text-center mx-auto"
+                          style={{ animationDelay: '0.2s' }}
           >
-            <PawPrint size={20} />
-            Load More Cats
+            <PawPrint className="w-5 h-5 transition-transform group-hover:scale-110" />
+            <span>More Cats</span>
           </button>
+          
         </div>
       </div>
       
