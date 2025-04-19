@@ -7,14 +7,14 @@
 
 @layer base {
   :root {
-    --background: 240 20% 98%;
-    --foreground: 258 10% 20%;
+    --background: 240 12% 12%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 258 10% 20%;
+    --card: 240 10% 16%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 258 10% 20%;
+    --popover: 240 10% 16%;
+    --popover-foreground: 0 0% 98%;
 
     --primary: 260 55% 75%;
     --primary-foreground: 210 40% 98%;
@@ -22,17 +22,17 @@
     --secondary: 260 25% 55%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 260 20% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 240 6% 20%;
+    --muted-foreground: 240 5% 64.9%;
 
-    --accent: 264 54% 95%;
-    --accent-foreground: 260 25% 55%;
+    --accent: 264 54% 25%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 260 15% 90%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 240 5% 26%;
+    --input: 240 5% 26%;
     --ring: 260 55% 75%;
 
     --radius: 0.5rem;
@@ -61,7 +61,7 @@
   }
 
   .image-card {
-    @apply overflow-hidden rounded-lg bg-white shadow-md transition-all hover:shadow-lg hover:-translate-y-1;
+    @apply overflow-hidden rounded-lg bg-card shadow-md transition-all hover:shadow-lg hover:-translate-y-1;
   }
 
   .image-card img {
@@ -74,5 +74,13 @@
 
   .cat-details-image img {
     @apply object-cover w-full transition-transform duration-500 hover:scale-102;
+  }
+  
+  .neon-border {
+    @apply border border-cat-neon shadow-[0_0_10px_rgba(198,123,255,0.5)];
+  }
+  
+  .neon-text {
+    @apply text-cat-neon drop-shadow-[0_0_8px_rgba(198,123,255,0.8)];
   }
 }

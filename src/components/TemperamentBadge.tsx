@@ -7,7 +7,7 @@ interface TemperamentBadgeProps {
 
 const TemperamentBadge: React.FC<TemperamentBadgeProps> = ({ trait }) => {
   return (
-    <span className="inline-block bg-cat-light text-cat-secondary px-3 py-1 rounded-full text-sm">
+    <span className="inline-block bg-muted text-cat-neon px-3 py-1 rounded-full text-sm border border-cat-neon/30 shadow-sm">
       {trait}
     </span>
   );
