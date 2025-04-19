@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -42,46 +41,65 @@
 @layer base {
   * {
     @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    @apply overflow-x-hidden;
   }
 
   body {
-    @apply bg-background text-foreground font-poppins;
+    @apply bg-background text-foreground font-poppins min-h-screen;
   }
 
   .image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-
-  @media (min-width: 640px) {
-    .image-grid {
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    }
+    @apply grid gap-6 px-4;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   }
 
   .image-card {
-    @apply overflow-hidden rounded-lg bg-card shadow-md transition-all hover:shadow-lg hover:-translate-y-1 border border-border/50;
+    @apply relative overflow-hidden rounded-xl bg-card/30 backdrop-blur-sm 
+           border border-white/10 shadow-lg transition-all duration-500
+           hover:shadow-[0_0_20px_rgba(198,123,255,0.3)]
+           hover:-translate-y-1 hover:border-cat-neon/30;
   }
 
   .image-card img {
-    @apply object-cover w-full h-64 transition-transform duration-500 hover:scale-105;
+    @apply object-cover w-full h-64 transition-all duration-500 hover:scale-105;
   }
 
   .cat-details-image {
-    @apply rounded-lg shadow-md transition-all hover:shadow-lg overflow-hidden;
+    @apply rounded-xl overflow-hidden 
+           border border-white/10 backdrop-blur-sm
+           transition-all duration-500 
+           hover:shadow-[0_0_30px_rgba(198,123,255,0.2)];
   }
 
   .cat-details-image img {
-    @apply object-cover w-full transition-transform duration-500 hover:scale-102;
+    @apply object-cover w-full transition-transform duration-500 hover:scale-105;
   }
   
+  .isomorphic-card {
+    @apply relative overflow-hidden rounded-xl
+           bg-gradient-to-br from-card/40 to-card/20
+           backdrop-blur-md border border-white/10
+           shadow-[0_8px_16px_rgba(0,0,0,0.2)]
+           before:absolute before:inset-0
+           before:bg-gradient-to-br before:from-transparent before:to-white/5
+           before:rounded-xl hover:shadow-[0_0_20px_rgba(198,123,255,0.2)]
+           transition-all duration-500;
+  }
+
   .neon-border {
-    @apply border border-cat-neon shadow-[0_0_10px_rgba(198,123,255,0.5)];
+    @apply border border-cat-neon/30 shadow-[0_0_15px_rgba(198,123,255,0.2)];
   }
-  
+
   .neon-text {
-    @apply text-cat-neon drop-shadow-[0_0_8px_rgba(198,123,255,0.8)];
+    @apply text-cat-neon drop-shadow-[0_0_8px_rgba(198,123,255,0.5)];
+  }
+
+  .glass-panel {
+    @apply bg-card/30 backdrop-blur-md border border-white/10 rounded-xl;
   }
 }
 
