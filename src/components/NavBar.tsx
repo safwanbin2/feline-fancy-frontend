@@ -13,7 +13,7 @@ const NavBar: React.FC = () => {
             <Cat size={16} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-background" />
           </div>
           <span className="font-orbitron font-bold text-xl text-transparent bg-clip-text bg-gradient-to-r from-white via-neon-green to-white neo-glow">
-            CyberFeline
+            CyberCat
           </span>
         </Link>
         

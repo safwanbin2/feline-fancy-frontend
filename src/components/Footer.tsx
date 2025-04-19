@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
               <Cat size={24} className="text-neon-green animate-pulse-glow" />
               <div className="absolute h-8 w-8 -inset-2 rounded-full border border-neon-green/30 animate-ping opacity-20"></div>
             </div>
-            <span className="font-orbitron text-lg text-neon-green">CyberFeline</span>
+            <span className="font-orbitron text-lg text-neon-green">CyberCat</span>
           </div>
           
           <div className="text-white/60 text-sm flex items-center gap-1">
@@ -20,12 +20,12 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="mt-4 md:mt-0 flex gap-4">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-neon-green transition-colors group">
+            <a href="https://github.com/safwanbin2/feline-fancy-frontend" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-neon-green transition-colors group">
               <Github size={20} className="group-hover:animate-pulse" />
             </a>
-            <a href="https://thecatapi.com/docs" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-neon-green transition-colors group">
+            {/* <a href="https://thecatapi.com/docs" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-neon-green transition-colors group">
               <Code size={20} className="group-hover:animate-pulse" />
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
